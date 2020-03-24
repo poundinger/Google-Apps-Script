@@ -1,3 +1,13 @@
+/* Automatically send an e-mail with an attached file
+***Use with Google spreadsheet***
+Column 1: e-mail address
+Column 2: subject
+Column 3: message
+Column 4: attached file name
+*/
+// Change this folder name to match the location of attached files
+var myFileParentFolderName = "2019-2_207108_sec06_optics2";
+
 function onOpen() {
  var ss = SpreadsheetApp.getActiveSpreadsheet(),
      options = [
@@ -9,8 +19,7 @@ function onOpen() {
 var EMAIL_SENT = "EMAIL_SENT";
 
 // Send an email with one attachment: a file from Google Drive (as a PDF)             
-function sendEmails2() {
-  var myFileParentFolderName = "2019-2_207108_sec06_optics2";
+function sendEmails2() {  
   var debug = 0;       
   var numCols = 4;
   var sheet = SpreadsheetApp.getActiveSheet();
